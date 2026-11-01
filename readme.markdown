@@ -43,6 +43,13 @@ In a real deployment the close button should be a physical button on the robot.
 The IoT close button is kept only for demonstration purposes.
 
 ---
+# Video Simulation (DigitalTwin)
+
+
+https://github.com/user-attachments/assets/5890430d-7e3b-40d7-bc70-6fb638f259da
+
+
+---
 
 ## Key Features
 
