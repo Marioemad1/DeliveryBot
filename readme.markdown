@@ -12,6 +12,7 @@
   <img alt="Nav2" src="https://img.shields.io/badge/Navigation-Nav2-blue?style=flat-square">
   <img alt="IoT" src="https://img.shields.io/badge/Cloud-ThingsBoard-green?style=flat-square">
   <img alt="Status" src="https://img.shields.io/badge/Status-Stable-success?style=flat-square">
+  <img alt="Robot" src="images/Screenshot_from_2026-11-01_14-16-44-removebg-preview.png">
 </p>
 
 > [!IMPORTANT]
