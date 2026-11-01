@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="front_right_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 ${pi}" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/wheel.STL" />
+            </geometry>
+            <material name="stain_black"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0.065 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.139095" />
+            </geometry>
+        </collision>
+        <xacro:sphere_inertial m="2.1688" r="0.139095" xyz="0 0.065 0" rpy="0 0 0" />
+    </link>
+
+    <link name="middle_right_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 ${pi}" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/wheel.STL" />
+            </geometry>
+            <material name="stain_black"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0.065 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.139095" />
+            </geometry>
+        </collision>
+        <xacro:sphere_inertial m="2.1688" r="0.139095" xyz="0 0.065 0" rpy="0 0 0" />
+    </link>
+
+    <link name="rear_right_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 ${pi}" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/wheel.STL" />
+            </geometry>
+            <material name="stain_black"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0.065 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.139095" />
+            </geometry>
+        </collision>
+        <xacro:sphere_inertial m="2.1688" r="0.139095" xyz="0 0.065 0" rpy="0 0 0" />
+    </link>
+
+    <link name="front_left_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/wheel.STL" />
+            </geometry>
+            <material name="stain_black"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.065 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.139095" />
+            </geometry>
+        </collision>
+        <xacro:sphere_inertial m="2.1688" r="0.139095" xyz="0 -0.065 0" rpy="0 0 0" />
+    </link>
+
+    <link name="middle_left_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/wheel.STL" />
+            </geometry>
+            <material name="stain_black"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.065 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.139095" />
+            </geometry>
+        </collision>
+        <xacro:sphere_inertial m="2.1688" r="0.139095" xyz="0 -0.065 0" rpy="0 0 0" />
+    </link>
+
+    <link name="rear_left_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/wheel.STL" />
+            </geometry>
+            <material name="stain_black"/>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.065 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.139095" />
+            </geometry>
+        </collision>
+        <xacro:sphere_inertial m="2.1688" r="0.139095" xyz="0 -0.065 0" rpy="0 0 0" />
+    </link>
+
+
+
+    <joint name="base_front_right_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="front_right_wheel" />
+        <origin xyz="0.30057 0.31324 -0.23245" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="base_middle_right_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="middle_right_wheel" />
+        <origin xyz="0.00060009 0.31324 -0.23245" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="base_rear_right_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rear_right_wheel" />
+        <origin xyz="-0.30057 0.31324 -0.23245" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="base_front_left_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="front_left_wheel" />
+        <origin xyz="0.30057 -0.31324 -0.23245" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="base_middle_left_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="middle_left_wheel" />
+        <origin xyz="0.00060009 -0.31324 -0.23245" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="base_rear_left_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rear_left_wheel" />
+        <origin xyz="-0.30057 -0.31324 -0.23245" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+    
+</robot>

@@ -1,0 +1,29 @@
+- ros_topic_name: "/clock"
+  gz_topic_name:  "/clock"
+  ros_type_name:  "rosgraph_msgs/msg/Clock" # you will need to search tp find the type
+  gz_type_name:   "gz.msgs.Clock"    # gz topic -i -t /clock, in modern us gz instead of ign
+  direction:  GZ_TO_ROS  #also you have ROS_TO_GZ  and BIDIRECTIONAL
+
+- ros_topic_name: "/scan"
+  gz_topic_name:  "/scan"
+  ros_type_name:  "sensor_msgs/msg/LaserScan" # you will need to search tp find the type
+  gz_type_name:   "gz.msgs.LaserScan"    # gz topic -i -t /clock, in modern us gz instead of ign
+  direction:  GZ_TO_ROS  #also you have ROS_TO_GZ  and BIDIRECTIONAL
+
+- ros_topic_name: "/scan/points"
+  gz_topic_name:  "/scan/points"
+  ros_type_name:  "sensor_msgs/msg/PointCloud2" # you will need to search tp find the type
+  gz_type_name:   "gz.msgs.PointCloudPacked"    # gz topic -i -t /clock, in modern us gz instead of ign
+  direction:  GZ_TO_ROS  #also you have ROS_TO_GZ  and BIDIRECTIONAL
+
+- ros_topic_name: "/imu"
+  gz_topic_name:  "/imu"
+  ros_type_name:  "sensor_msgs/msg/Imu" # you will need to search tp find the type
+  gz_type_name:   "gz.msgs.IMU"         # gz topic -i -t /clock, in modern us gz instead of ign
+  direction:  GZ_TO_ROS                 #also you have ROS_TO_GZ  and BIDIRECTIONAL
+
+# - ros_topic_name: "/ultrasonic_scan"
+#   gz_topic_name:  "/ultrasonic_scan"
+#   ros_type_name:  "sensor_msgs/msg/LaserScan" # you will need to search tp find the type
+#   gz_type_name:   "gz.msgs.LaserScan"    # gz topic -i -t /clock, in modern us gz instead of ign
+#   direction:  GZ_TO_ROS  #also you have ROS_TO_GZ  and BIDIRECTIONAL

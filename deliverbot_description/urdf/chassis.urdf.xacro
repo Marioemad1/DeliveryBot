@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="base_footprint"/>
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/base_link.STL" />
+            </geometry>
+            <material name="anodize_silver"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.14" rpy="0 0 0" />
+            <geometry>
+                <box size="0.75 0.65 0.25" />
+            </geometry>
+        </collision>
+        <xacro:box_inertia m="6.3848" l="0.75" h="0.65" w="0.30" xyz="0 0 -0.14" rpy="0 0 0"/>
+    </link>
+
+    <link name="base_chassis_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/base_chassis_link.STL" />
+            </geometry>
+            <material name="pearl_white"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.2" rpy="0 0 0" />
+            <geometry>
+                <box size="0.7 0.6 0.4" />
+            </geometry>
+        </collision>
+        <xacro:box_inertia m="6.1826" l="0.7" h="0.6" w="0.4" xyz="0 0 0.2" rpy="0 0 0"/>
+    </link>
+
+    <link name="chassis_top_link">
+        <visual>
+            <origin xyz="0.35 0 -0.456" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://deliverbot_description/meshes/chassis_hatch_link.STL" />
+            </geometry>
+            <material name="stain_black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.35 0 -0.025" rpy="0 0 0" />
+            <geometry>
+                <box size="0.7 0.6 0.05" />
+            </geometry>
+        </collision>
+        <xacro:box_inertia m="4.3077" l="0.7" h="0.6" w="0.05" xyz="0.35 0 -0.025" rpy="0 0 0"/>
+    </link>
+
+
+    <joint name="base_base_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 0.371545" rpy="0 0 0" />
+    </joint>
+
+    <joint name="base_body_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="base_chassis_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="body_hatch_joint" type="revolute">
+        <parent link="base_chassis_link" />
+        <child link="chassis_top_link" />
+        <origin xyz="-0.35 0 0.456" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.2" upper="0.05" velocity="0.5" effort="1000.0"/>
+        <dynamics damping="5.0" friction="1.0"/>
+    </joint>
+    
+</robot>
